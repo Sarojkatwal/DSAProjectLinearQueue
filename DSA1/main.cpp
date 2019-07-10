@@ -4,6 +4,7 @@
 #include<cstdlib>
 #include<sstream>
 #include "graphics.h"
+#include "queuestatus.h"
 using namespace std;
 const int MAX = 8;
 class FULL {};
@@ -87,11 +88,13 @@ int main()
 		}
 		catch (EMPTY)
 		{
-			cout << "The queue is empty\n";
+			EMPTYORFULL B;
+			B.show("QUEUE EMPTY");
 		}
 		catch (FULL)
 		{
-			cout << "The queue is full\n";
+			EMPTYORFULL B;
+			B.show("QUEUE FULL");
 		}
 		cin.get();
 		cin.get();

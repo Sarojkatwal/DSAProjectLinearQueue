@@ -49,7 +49,7 @@ public:
 			{
 				window.display();
 				++j;
-				sf::sleep(sf::seconds(5));
+				sf::sleep(sf::seconds(2));
 				window.clear();
 				continue;
 			}
@@ -66,8 +66,8 @@ public:
 			{
 				drawtext(&window, sf::Color::Cyan, sf::Vector2f((re)* length + x + length / 1.5f, y + 1.5f*height), ddata.str(), 20, sf::Text::Italic);
 			}
-			drawarrow(&window, sf::Vector2f((fr)*length + x + length/1.5f, y + height/1.4f));
-			drawarrow(&window, sf::Vector2f((re)* length + x + length / 1.5f, y + height / 1.4f));
+			drawimage(&window, sf::Vector2f((fr)*length + x + length/1.5f, y + height/1.4f));
+			drawimage(&window, sf::Vector2f((re)* length + x + length / 1.5f, y + height / 1.4f));
 			window.display();
 			window.clear();
 			if (j == 0||j==1)
@@ -90,8 +90,8 @@ public:
 				ddata.str("");
 				ddata << "Front=" << fr;
 				drawtext(&window, sf::Color::Cyan, sf::Vector2f((fr)*length + x + length / 1.5f, y + 1.25f*height), ddata.str(), 20, sf::Text::Italic);
-				drawarrow(&window, sf::Vector2f((fr)*length + x + length / 1.5f, y + height / 1.4f));
-				drawarrow(&window, sf::Vector2f((re)* length + x + length / 1.5f, y + height / 1.4f));
+				drawimage(&window, sf::Vector2f((fr)*length + x + length / 1.5f, y + height / 1.4f));
+				drawimage(&window, sf::Vector2f((re)* length + x + length / 1.5f, y + height / 1.4f));
 				i == 0 ? ++fr : ++re;
 			}
 		}
@@ -118,7 +118,7 @@ public:
 		nodedata.setPosition(pos);
 		window->draw(nodedata);
 	}
-	void drawarrow(sf::RenderWindow *window,sf::Vector2f pos)
+	void drawimage(sf::RenderWindow *window,sf::Vector2f pos)
 	{
 		sf::Texture texture;
 		if (!texture.loadFromFile("arrow.png"))
