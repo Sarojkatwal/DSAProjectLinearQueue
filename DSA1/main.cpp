@@ -5,7 +5,6 @@
 #include<sstream>
 #include "graphics.h"
 using namespace std;
-
 const int MAX = 8;
 class FULL {};
 class EMPTY {};
