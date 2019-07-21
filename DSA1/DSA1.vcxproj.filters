@@ -26,5 +26,11 @@
     <ClInclude Include="queuestatus.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Mainmenu.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Takeinput.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

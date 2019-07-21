@@ -5,6 +5,7 @@
 #include<sstream>
 #include "graphics.h"
 #include "queuestatus.h"
+#include "Mainmenu.h"
 using namespace std;
 const int MAX = 8;
 class FULL {};
@@ -46,6 +47,7 @@ public:
 			fronts = fronts + 1;
 			INSERTDELETE<T> A;
 			A.show(arr, fronts-1, rear, MAX,0);
+			cout << "Popped element:" << arr[fronts-1] << endl;
 			return arr[fronts-1];
 		}
 	}
@@ -56,7 +58,46 @@ public:
 };
 int main()
 {
+	sf::RenderWindow window;// (sf::VideoMode(500, 550), "MainMenu", sf::Style::Titlebar | sf::Style::Close);
+	mainmenu M;
+	INPUT A;
+	int x, num;
 	queqe<int> s1;
+	while (true)
+	{
+		try
+		{
+			x = M.draw();
+			switch (x)
+			{
+			case 1:
+				num = A.inputs(&window);
+				if (num != -1)
+				{
+					s1.enqueue(num);
+				}
+				break;
+			case 2:
+				s1.dequeue();
+				break;
+			case 3:
+				break;
+			case 4:
+				return 1;
+			}
+		}
+		catch (EMPTY)
+		{
+			EMPTYORFULL B;
+			B.show("QUEUE EMPTY");
+		}
+		catch (FULL)
+		{
+			EMPTYORFULL B;
+			B.show("QUEUE fULL");
+		}
+	}
+	/*
 	int i, data;
 	while (true)
 	{
@@ -86,21 +127,12 @@ int main()
 				exit(0);
 			}
 		}
-		catch (EMPTY)
-		{
-			EMPTYORFULL B;
-			B.show("QUEUE EMPTY");
-		}
-		catch (FULL)
-		{
-			EMPTYORFULL B;
-			B.show("QUEUE FULL");
-		}
+		
 		cin.get();
 		cin.get();
 		system("cls");
 	}
-	return 0;
+	*/
 }
 
 

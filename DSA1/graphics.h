@@ -24,7 +24,7 @@ public:
 				{
 					if (event.mouseButton.button == sf::Mouse::Left)
 					{
-						std::cout << event.mouseButton.x << " " << event.mouseButton.y << std::endl;
+						//std::cout << event.mouseButton.x << " " << event.mouseButton.y << std::endl;
 					}
 				}
 			}
