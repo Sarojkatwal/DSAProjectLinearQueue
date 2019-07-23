@@ -7,12 +7,12 @@ public:
 		sf::Vector2f initarrpos1,initarrpos2;
 		int j = 0;
 		float x = 10.0f, y = 110.0f, length = 950.0f / (max + 1), height = 90.0f;
-	    std::string initi = "Initially";
 		int textsize = static_cast<int>(length/3);
 		sf::ContextSettings settings;
 		settings.antialiasingLevel = 8;
 		sf::RenderWindow window(sf::VideoMode(1000, 400), "Queues",sf::Style::Default,settings);
-		std::ostringstream ddata(ios::ate | ios::out);
+		std::ostringstream ddata, hints;
+		hints << "Initially";
 		while (window.isOpen())
 		{
 			sf::Event event;
@@ -29,7 +29,7 @@ public:
 				}
 			}
 			drawtext(&window, sf::Color::Red, sf::Vector2f(300,10), "LINEAR QUEUE", 50, sf::Text::Bold);
-			drawtext(&window, sf::Color::White, sf::Vector2f(30, 70),initi, 30, sf::Text::Bold);
+			drawtext(&window, sf::Color::White, sf::Vector2f(30, 70),hints.str(), 30, sf::Text::Bold);
 			drawrectangle(&window, sf::Color::Blue, sf::Vector2f(x+length/2 , y), 90, sf::Vector2f( height,10));
 		    float m = x+length/2;
 			for (int i =0; i <re; i++)
@@ -49,7 +49,7 @@ public:
 			{
 				window.display();
 				++j;
-				sf::sleep(sf::seconds(2));
+				sf::sleep(sf::seconds(3.0f));
 				window.clear();
 				continue;
 			}
@@ -72,9 +72,10 @@ public:
 			window.clear();
 			if (j == 0||j==1)
 			{
-				sf::sleep(sf::seconds(1));
+				sf::sleep(sf::seconds(2+2*j));
 				j++;
-				initi = (i == 0) ? "After deletion" : "After insertion";
+				hints.str("");
+				hints << (i == 1? "Insert new element at rear end and Increase rear by one." : "Remove the element of front end and Increase front by one..");
 			}
 			if (j ==2)
 			{
@@ -93,6 +94,10 @@ public:
 				drawimage(&window, sf::Vector2f((fr)*length + x + length / 1.5f, y + height / 1.4f));
 				drawimage(&window, sf::Vector2f((re)* length + x + length / 1.5f, y + height / 1.4f));
 				i == 0 ? ++fr : ++re;
+			}
+			if (j >= 3)
+			{
+				hints.str("");
 			}
 		}
 	}

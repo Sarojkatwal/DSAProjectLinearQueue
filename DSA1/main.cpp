@@ -58,7 +58,7 @@ public:
 };
 int main()
 {
-	sf::RenderWindow window;// (sf::VideoMode(500, 550), "MainMenu", sf::Style::Titlebar | sf::Style::Close);
+	sf::RenderWindow window;
 	mainmenu M;
 	INPUT A;
 	int x, num;
@@ -97,42 +97,6 @@ int main()
 			B.show("QUEUE fULL");
 		}
 	}
-	/*
-	int i, data;
-	while (true)
-	{
-		try
-		{
-			cout << "1.ENQUEUE\n2.DEQUEUE\n3.Exit\n";
-			cout << "Enter your choice:";
-			cin >> i;
-			if (i == 1)
-			{
-				cout << "Enter the data :";
-				cin >> data;
-				s1.enqueue(data);
-				s1.printfr();
-			}
-			else if (i == 2)
-			{
-				cout << "DEQUEUEED data:" << s1.dequeue() << endl;
-				s1.printfr();
-			}
-			else if (i == 3)
-			{
-				exit(0);
-			}
-			else
-			{
-				exit(0);
-			}
-		}
-		
-		cin.get();
-		cin.get();
-		system("cls");
-	}
-	*/
 }
 
 
