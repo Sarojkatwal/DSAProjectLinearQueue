@@ -2,7 +2,7 @@ using namespace std;
 class ABOUT
 {
 public:
-	int SHOW()
+	void SHOW()
 	{
 		sf::ContextSettings settings;
 		settings.antialiasingLevel = 8;
