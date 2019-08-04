@@ -6,6 +6,8 @@
 #include "graphics.h"
 #include "queuestatus.h"
 #include "Mainmenu.h"
+#include "about.h"
+
 using namespace std;
 const int MAX = 8;
 class FULL {};
@@ -61,6 +63,7 @@ int main()
 	sf::RenderWindow window;
 	mainmenu M;
 	INPUT A;
+	ABOUT ABO;
 	int x, num;
 	queqe<int> s1;
 	while (true)
@@ -81,6 +84,7 @@ int main()
 				s1.dequeue();
 				break;
 			case 3:
+				ABO.SHOW();
 				break;
 			case 4:
 				return 1;

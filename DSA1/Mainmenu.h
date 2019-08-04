@@ -1,4 +1,4 @@
-#include "Takeinput.h"
+#include"takeinput.h"
 class mainmenu
 {
 public:

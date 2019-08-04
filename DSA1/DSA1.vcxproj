@@ -138,6 +138,7 @@
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="about.h" />
     <ClInclude Include="graphics.h" />
     <ClInclude Include="Mainmenu.h" />
     <ClInclude Include="queuestatus.h" />

@@ -72,7 +72,7 @@ public:
 			window.clear();
 			if (j == 0||j==1)
 			{
-				sf::sleep(sf::seconds(2+2*j));
+				sf::sleep(sf::seconds(2.0f+2.0f*j));
 				j++;
 				hints.str("");
 				hints << (i == 1? "Insert new element at rear end and Increase rear by one." : "Remove the element of front end and Increase front by one..");
@@ -120,6 +120,14 @@ public:
 		nodedata.setFillColor(color);
 		nodedata.setStyle(style);
 		nodedata.setString(ddata);
+		if (ddata.length() > 3)
+		{
+			pos.x -= 20.0f;
+		}
+		else if (ddata.length()>2)
+		{
+			pos.x -= 10.0f;
+		}
 		nodedata.setPosition(pos);
 		window->draw(nodedata);
 	}
